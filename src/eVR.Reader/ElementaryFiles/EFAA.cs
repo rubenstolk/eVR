@@ -69,7 +69,7 @@ namespace EVR.Reader
                  *    De uitlees- en verificatiesoftware genereert een random 8 bytes
                  */
                 byte[] RND = Helper.RandomByteArray(8);
-                byte[] internalAuthent = new byte[] { 0x00, 0x88, 0x00, 0x00, 0x08 }.Concat(Helper.RandomByteArray(8)).Concat(new byte[] { 0x00 }).ToArray();
+                byte[] internalAuthent = new byte[] { 0x00, 0x88, 0x00, 0x00, 0x08 }.Concat(RND).Concat(new byte[] { 0x00 }).ToArray();
 
                 //// f. Chip authenticatie
                 ////    Stuur 8-byte challenge (RND.IFD) naar kaart via Internal Authenticate commando
